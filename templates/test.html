@@ -12,12 +12,43 @@
         <link rel="stylesheet" href="static/stylesheets/base.css">
         <link rel="stylesheet" href="static/stylesheets/skeleton.css">
         <link rel="stylesheet" href="static/stylesheets/layout.css">
-        
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content = "width=device-width,initial-scale=1">
+
 
 
     </head>
     <body>
-        <h1> This loaded correctly </h1>
+        <div class = "container">
+            <div class="row">
+                <div class="sixteen columns">
+                    <h1> a NY Minute </h1>
+                    <h3> How much time do you have? </h3>
+                </div>
+            </div>
+            <div class="row">
+                <form name="timeSlot" action="/more" method="POST">
+                    <select name="time">
+                        <option value="5">
+                            5 minutes
+                        </option>
+                        <option value="10">
+                            10 minutes
+                        </option>
+                        <option value="15">
+                            15 minutes
+                        </option>
+                        <option>
+                            20 minutes
+                        </option>
+                        <option>
+                            25 minutes
+                        </option>
+                    </select>
+                </form>
+        </div>
     </body>
     <script src="static/scripts/translate.js" onLoad="initialize()">
     </script>
