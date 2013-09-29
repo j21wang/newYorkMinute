@@ -20,6 +20,19 @@ def findArticles():
     i = 0
     check = 'argument' + str(i)
 
+##Get the list of unkown size of arguments of urls to parse.
+    while request.args.get(check) != None:
+        articles.append(request.args.get(check))
+        i = i + 1
+
+## iterate through articles to analyze them.
+    for j in range(0,len(articles)):
+        soup = BeautifulSoup(requests.get(articles[j]).text)
+
+        
+
+
+
     
     
 
