@@ -1,9 +1,14 @@
 $(document).ready(function(){
+    /*$('form').submit(function(e) {
+        e.preventDefault();
+        $(".next.button").click();
+    });*/
+
     $(".next.button").click(function(){
         var topic = $(".topic").val().replace(' ','+');
         console.log(topic);
         if(topic == '') {
-            alert("Please enter a topic");
+           // TRENDING TOPICS 
         } else{
             var callback = function (err, articles) {
                changeURL(articles);
