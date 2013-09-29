@@ -26,12 +26,11 @@ def home():
 @app.route('/findArticles', methods= ['POST'])
 def findArticles():
     timeWindow = request.form.get('time', type=int)
-    topic = request.form.get('topic').replace(' ', '+')
+    #topic = request.form.get('topic').replace(' ', '+')
     articles = []
     articlesTime = []
     i = 0
     check = 'argument' + str(i)
-    print( request.args.get('test'))
     
 
 ##Get the list of unkown size of arguments of urls to parse.
@@ -39,13 +38,11 @@ def findArticles():
         articles.append(request.args.get(check))
         i = i + 1
         check = 'argument' + str(i)
-        print(articles)
 
 ## iterate through articles to analyze them.
     for j in range(0,len(articles)):
         parser_response = parser_client.get_article_content(articles[j])
 
-        print( type(parser_response.content['content']) )
 
 
         #htmlDoc = requests.get(articles[j]).text
@@ -64,16 +61,16 @@ def findArticles():
         totalCount = 0
         for k in range(0, len(sentenceList)):
             totalCount = totalCount + len(sentenceList[k])
-            print(sentenceList[k])
             for l in range(0, len(sentenceList[k])):
                 if sentenceList[k][l] in stopWords:
                     stopCount = stopCount + 1
 
         sum =  stopCount + totalCount
-        metric = float(sum)/250
+        low = (float(sum)/250)%.2
+        high = (float(sum)/300)%.2
 
-        print(metric)
-    return render_template('find.html', time = timeWindow, topic = topic)
+
+    return render_template('find.html', time = timeWindow, lowerBound = low, upperBound = high )
     
 
 if __name__ == "__main__":
