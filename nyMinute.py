@@ -21,7 +21,7 @@ with open('static/stop.txt') as stop:
 def home():
     
 
-    return render_template('test.html')
+    return render_template('debug.html')
 
 @app.route('/findArticles', methods= ['POST'])
 def findArticles():
@@ -31,7 +31,6 @@ def findArticles():
     articlesTime = []
     i = 0
     check = 'argument' + str(i)
-    
 
 ##Get the list of unkown size of arguments of urls to parse.
     while request.args.get(check) != None:
@@ -42,7 +41,6 @@ def findArticles():
 ## iterate through articles to analyze them.
     for j in range(0,len(articles)):
         parser_response = parser_client.get_article_content(articles[j])
-
 
 
         #htmlDoc = requests.get(articles[j]).text
@@ -64,10 +62,9 @@ def findArticles():
             for l in range(0, len(sentenceList[k])):
                 if sentenceList[k][l] in stopWords:
                     stopCount = stopCount + 1
-
         sum =  stopCount + totalCount
-        low = (float(sum)/250)%.2
-        high = (float(sum)/300)%.2
+        high = '%.2f' % (float(sum)/250)
+        low = '%.2f' % (float(sum)/300)
 
 
     return render_template('find.html', time = timeWindow, lowerBound = low, upperBound = high )
