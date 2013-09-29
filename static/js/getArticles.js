@@ -1,12 +1,14 @@
 $(document).ready(function(){
-    $(".submit").click(function(){
+    $("#thing").click(function(){
         var topic = $(".topic").val();
-        alert(topic);
-        getArticleArray(topic);
+        var callback = function (err, articles) {
+           changeURL(articles);
+        };
+        getArticleArray(topic, callback);
     });
 });
 
-function getArticleArray(topic){
+function getArticleArray (topic, callback) {
 
     var articleArr;
     $.ajax({
@@ -19,12 +21,26 @@ function getArticleArray(topic){
             $.each(articleArr,function(key,value){
                 var url = "?article=" + value.web_url;
                 articleArr[key] = url;
+                //console.log(articleArr[key]);
             });
-        }
+            callback(null, articleArr);
+        },
+        error: function (err) { callback(err); }
     });
-    return articleArr;
 }
 
-function changeURL(){
-    alert(articleArr);
+function changeURL(articleArr){
+    console.log(articleArr);
+    var actionString = $("form").prop("action");
+    
+    $.each(articleArr,function(key,value){
+
+        if(key==0){
+            console.log(key);
+            actionString += "argument" + key + "=" + value;
+        } else {
+            actionString += "&argument" + key + "=" + value;
+        }
+    });
+    return actionString;
 }
