@@ -30,6 +30,14 @@
                 </div>
 
                 <div class="eight columns" > 
+                    <div class="formContent">
+                        <form name="topic" >
+                            <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
+                            
+                        </form>
+                        <div class="next button two column" >
+                            <h3> NEXT </h3>
+                        </div>
                         <form name="timeSlot" action="/findArticles" method="POST">
                             <select name="time" style="display:none">
                                 <option value="5">
@@ -57,10 +65,10 @@
                                     60 minutes
                                 </option>
                             </select>
-                            <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
                             <input type="submit" class="submit button" style="display:none"/>
-                                </form>
-                            <button class="next button">Next</button>
+                            </form>
+                    </div>
+                            
                 </div>
             </div>
         </div>
