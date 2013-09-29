@@ -22,24 +22,27 @@
     </head>
     <body>
         <div class = "container">
-            <div class="row">
+            <div class="row remove-bottom">
                 <div class="sixteen columns">
                     <h1> a NY Minute </h1>
                     <h3> You can probably finish these articles in {{ time }} minutes </h3>
                     <h4> Approximate reading time {{ lowerBound }} to  {{ upperBound }} minutes </h4>
 
 
-                    <hr />
+                    <hr class="remove-bottom" />
                 </div>
             </div>
-            <div class="row">
+            <div class="row remove-bottom">
                 <div class= "center">
-                    <ul>
                         {% for article in finalArticlesList %}
-
-                        <li>
-                            <a href="{{article.link}}" target="_blank">{{article.title}} - {{article.author}}</a>
-                        </li>
+                        <a href="{{article.link}}" target="_blank">
+                        <div class="sixteen columns remove-bottom" style="margin-bottom: 20px">
+                            <h2>{{article.title}}</h2>
+                            <p class="remove-bottom">  – {{article.author}} </p> 
+                            <h5> {{article.lowM}}m {{article.lowS}}s – {{article.highM}}m {{article.highS}}s </h5>
+                            <hr class="remove-bottom"/>
+                        </div>
+                        </a>
                         {% endfor %}
                     </ul>
                 </div>
