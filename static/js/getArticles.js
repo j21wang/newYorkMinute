@@ -8,13 +8,18 @@ $(document).ready(function(){
         var topic = $(".topic").val().replace(' ','+');
         console.log(topic);
         if(topic == '') {
-           // TRENDING TOPICS 
-        } else{
-            var callback = function (err, articles) {
-               changeURL(articles);
-            };
-            getArticleArray(topic, callback);
+            console.log("enters");
+            topicArr = ['America','alcohol','kardashian','weight','cancer','Obama','money','joke','dead','football'];
+            randomNum = Math.floor(Math.random() *10);
+            console.log(randomNum);
+            topic = topicArr[randomNum];
+            console.log(topic);
         }
+        var callback = function (err, articles) {
+            console.log("HI");
+           changeURL(articles);
+        };
+        getArticleArray(topic, callback);
     });
 });
 
