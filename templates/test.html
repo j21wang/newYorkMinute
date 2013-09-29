@@ -23,11 +23,21 @@
     <body>
         <div class = "container">
             <div class="row">
-                <div class="offset-by-three six columns">
+
+            <div class="content">
+                <div class="six columns">
                     <h1> a NY Minute </h1>
                     <h3> How much time do you have? </h3>
                 </div>
-                <div class="four columns" > 
+            </div>
+
+                <hr />
+            </div>
+
+            <div class="row">
+
+            <div class="content">
+                <div class="six columns" > 
                     <form name="timeSlot" action="/findArticles" method="POST">
                         <select name="time">
                             <option value="5">
@@ -50,10 +60,8 @@
                         <input type="submit" class=" button" />
                     </form>
                 </div>
-
-                <hr />
             </div>
-
+          </div>
         </div>
     </body>
 

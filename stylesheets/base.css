@@ -230,7 +230,8 @@
 ================================================== */
 
 	form{
-		margin: 0 auto; }
+		margin: 0 auto; 
+    }
 	fieldset {
 		margin-bottom: 20px; }
 	input[type="text"],
@@ -282,6 +283,10 @@
 
 /* #Misc
 ================================================== */
+.content{
+    display: block;
+    margin:0 0 0 120px;
+}
 	.remove-bottom { margin-bottom: 0 !important; }
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
