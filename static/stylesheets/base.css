@@ -80,9 +80,11 @@
 	
 	h1 {
 		font-family: BG;
+        text-align:center;
 	}
 	h3 {
 		font-family: BGitthin;
+        text-align:center;
 	}
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 		h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
@@ -248,9 +250,11 @@
 		margin: 0 auto;
 		width: 210px;
 		max-width: 100%;
-		display: block;
 		margin-bottom: 20px;
-		background: #fff; }
+		background: #fff; 
+        position:relative;
+        height:30px;
+    }
 	select {
 		padding: 0; }
 	input[type="text"]:focus,
@@ -289,3 +293,32 @@
 		width: 350px;
 	}
 
+    input.button{
+        position:relative;
+        display:inline;
+        width:100px;
+        margin-top:30px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        select{
+            margin-left:45px;
+            margin-bottom:5px;
+        }
+        input.button{
+            position:relative;
+            margin-top:5px;
+            margin-left:100px;
+        }
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        input.button{
+            margin-left: 0px;
+        }
+    }
+
+    .container{
+        position:relative;
+        top:100px;
+    }

@@ -23,17 +23,12 @@
     <body>
         <div class = "container">
             <div class="row">
-                <div class="sixteen columns">
-                    <div class="center content">
-                        <h1> a NY Minute </h1>
+                <div class="eight columns">
+                        <h1 class="remove-bottom"> a NY Minute </h1>
                         <h3> How much time do you have? </h3>
-                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="sixteen  columns" > 
-                    <div class="center content">
+                <div class="eight columns" > 
                         <form name="timeSlot" action="/findArticles" method="POST">
                             <select name="time">
                                 <option value="5">
@@ -52,10 +47,9 @@
                                     25 minutes
                                 </option>
                             </select>
-                            <input type="text" name="topic" placeholder="Enter a topic" />
-                            <input type="submit" class=" button" />
+                            <!--<input type="text" name="topic" placeholder="Enter a topic" />-->
+                            <input type="submit" class="button" />
                         </form>
-                    </div>
                 </div>
             </div>
         </div>
