@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".next.button").click(function(){
-        var topic = $(".topic").val();
+        var topic = $(".topic").val().replace(' ','+');
             if(topic != ""){
             $("#read").addClass('downTranslate');
             var computedStyle = $(window).height();
