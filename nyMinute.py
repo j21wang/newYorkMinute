@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 
 import os
+import requests
+import urllib
 
 app = Flask(__name__)
 
@@ -14,22 +16,38 @@ def home():
 
 @app.route('/findArticles', methods= ['POST'])
 def findArticles():
-    timeWindow = int(request.form.get('time'))
+    timeWindow = request.form.get('time', type=int)
     topic = request.form.get('topic').replace(' ', '+')
     articles = []
     i = 0
     check = 'argument' + str(i)
+    print( request.args.get('test'))
+    
 
 ##Get the list of unkown size of arguments of urls to parse.
     while request.args.get(check) != None:
         articles.append(request.args.get(check))
         i = i + 1
+        check = 'argument' + str(i)
+        print(articles)
 
 ## iterate through articles to analyze them.
     for j in range(0,len(articles)):
-        soup = BeautifulSoup(requests.get(articles[j]).text)
-
+        htmlDoc = requests.get(articles[j]).text
+        soup = BeautifulSoup(htmlDoc)
+        contentList = soup.find_all('p', {'itemprop': 'articleBody'})
+        sentenceList = []
+        for k in range(0, len(contentList)):
+            sentenceList.append( contentList[k].get_text().split()  )
+            
         
+        
+        #sentence list is a 2d array basically.
+
+        print (sentenceList[0])
+        ## ANALYZE THE SOUP ##
+
+
 
 
 
