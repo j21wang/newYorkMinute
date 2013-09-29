@@ -31,16 +31,19 @@ function getArticleArray (topic, callback) {
 
 function changeURL(articleArr){
     console.log(articleArr);
-    var actionString = $("form").prop("action");
+    var actionString = "/findArticles?";
     
     $.each(articleArr,function(key,value){
 
         if(key==0){
             console.log(key);
-            actionString += "argument" + key + "=" + value;
+            actionString += "url_" + key + "=" + value;
         } else {
-            actionString += "&argument" + key + "=" + value;
+            actionString += "&url_" + key + "=" + value;
         }
     });
+    console.log(actionString);
+    $("form").prop("action",actionString);
+    
     return actionString;
 }
