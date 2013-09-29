@@ -19,8 +19,9 @@
     </head>
     <body>
         <div class = "container">
-            <div class="row">
-                <div class="eight columns">
+            <hr />
+            <div class="row remove-bottom">
+                <div class="eight columns remove-bottom">
                     <a href="/">
                         <h1 class="remove-bottom"> a NY Minute </h1>
                     </a>
@@ -29,16 +30,19 @@
 
                 </div>
 
-                <div class="eight columns" > 
+                <div class="eight columns remove-bottom" > 
                     <div class="formContent">
                         <form name="topic" >
                             <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
                             
                         </form>
-                        <div class="next button two column" >
-                            <h3> NEXT </h3>
+                        <div class="next button" >
+                            <a href="#">
+                                <h3> next </h3>
+                            </a>
                         </div>
                         <form name="timeSlot" action="/findArticles" method="POST">
+                        <div id='holder'>
                             <select name="time" style="display:none">
                                 <option value="5">
                                     5 minutes
@@ -65,12 +69,14 @@
                                     60 minutes
                                 </option>
                             </select>
-                            <input type="submit" class="submit button" style="display:none"/>
+                            <input type="submit" id="submit" class="submit button" style="display:none"/>
+                        </div>
                             </form>
                     </div>
                             
                 </div>
             </div>
+            <hr class="remove-bottom" />
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="static/js/getArticles.js"></script>
