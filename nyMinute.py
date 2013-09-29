@@ -19,12 +19,10 @@ with open('static/stop.txt') as stop:
 
 @app.route('/')
 def home():
-    
-
     return render_template('test.html')
 
 @app.route('/runTest', methods= ['GET'])
-def home():
+def derp():
     return render_template('debug.html')
 
 @app.route('/findArticles', methods= ['POST'])
