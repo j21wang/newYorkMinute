@@ -22,18 +22,17 @@
     </head>
     <body>
         <div class = "container">
-            <div class="row remove-bottom">
+            <div class="row add-bottom">
                 <div class="sixteen columns">
                     <a href="/">
-                        <h1> a NY Minute </h1>
+                        <h1> aNYminute </h1>
                     </a>
                     <h3> You can probably finish these articles in {{ time }} minutes </h3>
                     <h4> Approximate reading time {{ lowerBound }} to  {{ upperBound }} minutes </h4>
 
-
-                    <hr class="remove-bottom" />
                 </div>
-            </div>
+            </div>    
+            <hr class="remove-bottom" />
             <div class="row remove-bottom">
                 <div class= "center">
                         {% for article in finalArticlesList %}

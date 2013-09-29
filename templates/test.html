@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="static/stylesheets/base.css">
         <link rel="stylesheet" href="static/stylesheets/skeleton.css">
         <link rel="stylesheet" href="static/stylesheets/layout.css">
+        <link rel="stylesheet" href="static/stylesheets/dataurl.css">
 
         <meta name="description" content="">
         <meta name="author" content="">
@@ -23,7 +24,7 @@
             <div class="row remove-bottom">
                 <div class="eight columns remove-bottom">
                     <a href="/">
-                        <h1 class="remove-bottom"> a NY Minute </h1>
+                        <h1 class="remove-bottom"> aNYminute </h1>
                     </a>
                         <h3 id="read"> What do you want to read about? </h3>
                         <h3 id="time" style="background-color:transparent; display:none">How much time do you have?</h3>
@@ -41,7 +42,7 @@
                                 <h3> next </h3>
                             </a>
                         </div>
-                        <form name="timeSlot" action="/findArticles" method="POST">
+                        <form name="timeSlot" action="/findArticles" method="POST" onsubmit="return pace.start()">
                         <div id='holder'>
                             <select name="time" style="display:none">
                                 <option value="5">
@@ -69,7 +70,7 @@
                                     60 minutes
                                 </option>
                             </select>
-                            <input type="submit" id="submit" class="submit button" style="display:none"/>
+                            <input type="submit" id="submit" class="submit button" style="display:none" on/>
                         </div>
                             </form>
                     </div>
@@ -81,6 +82,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="static/js/getArticles.js"></script>
         <script src="static/js/test.js"></script>
+        <script src="static/js/pace.min.js" />
     </body>
 
 </html>

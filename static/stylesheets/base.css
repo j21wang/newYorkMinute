@@ -216,6 +216,10 @@
 		border: none;
 		text-transform: lowercase;
 		margin:0;
+		cursor: pointer;
+	}
+	input[type="submit"]:hover, a:hover {
+		color:#ab423f;
 	}
 	.formContent > form > #holder > select {
 		background: transparent;
