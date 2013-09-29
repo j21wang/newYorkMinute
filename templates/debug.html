@@ -1,0 +1,60 @@
+<!doctype html>
+<! Updated as of 16th >
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-quiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title> NYminute </title>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="static/js/test.js"></script>
+        <script src="static/js/getArticles.js"></script>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content = "width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="static/stylesheets/base.css">
+        <link rel="stylesheet" href="static/stylesheets/skeleton.css">
+        <link rel="stylesheet" href="static/stylesheets/layout.css">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content = "width=device-width,initial-scale=1">
+
+
+    </head>
+    <body>
+        <div id="thing" style="height:20px; width:20px; border:thin solid black">Click</div>
+        <div class = "container">
+            <div class="row">
+                <div class="eight columns">
+                        <h1 class="remove-bottom"> a NY Minute </h1>
+                        <h3> How much time do you have? </h3>
+                </div>
+
+                <div class="eight columns" > 
+                        <form name="timeSlot" action="/findArticles?argument0=http://www.nytimes.com/2013/09/29/us/nsa-examines-social-networks-of-us-citizens.html" method="POST">
+                            <select name="time" >
+                                <option value="5">
+                                    5 minutes
+                                </option>
+                                <option value="10">
+                                    10 minutes
+                                </option>
+                                <option value="15">
+                                    15 minutes
+                                </option>
+                                <option value="20">
+                                    20 minutes
+                                </option>
+                                <option>
+                                    25 minutes
+                                </option>
+                            </select>
+                            <input type="submit" class="button" />
+                        </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
