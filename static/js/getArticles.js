@@ -1,10 +1,14 @@
 $(document).ready(function(){
-    $("#thing").click(function(){
+    $(".next.button").click(function(){
         var topic = $(".topic").val();
-        var callback = function (err, articles) {
-           changeURL(articles);
-        };
-        getArticleArray(topic, callback);
+        if(topic == '') {
+            alert("Please enter a topic");
+        } else{
+            var callback = function (err, articles) {
+               changeURL(articles);
+            };
+            getArticleArray(topic, callback);
+        }
     });
 });
 
@@ -19,7 +23,7 @@ function getArticleArray (topic, callback) {
         success: function(resp){
             articleArr = resp.response.docs;
             $.each(articleArr,function(key,value){
-                var url = "?article=" + value.web_url;
+                var url =  value.web_url;
                 articleArr[key] = url;
                 //console.log(articleArr[key]);
             });

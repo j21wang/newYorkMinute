@@ -167,7 +167,7 @@
 	  -webkit-border-radius: 3px;
 	  border-radius: 3px;
 	  color: #444;
-	  display: inline-block;
+	  display: inline;
 	  font-size: 11px;
 	  font-weight: bold;
 	  text-decoration: none;
@@ -293,11 +293,10 @@
 		width: 350px;
 	}
 
-    input.button{
+    .next.button{
         position:relative;
         display:inline;
         width:100px;
-        margin-top:30px;
     }
 
     @media only screen and (max-width: 767px) {
@@ -305,7 +304,7 @@
             margin-left:45px;
             margin-bottom:5px;
         }
-        input.button{
+        .next.button{
             position:relative;
             margin-top:5px;
             margin-left:100px;
@@ -323,11 +322,20 @@
         top:100px;
     }
 
-    .container.horizTranslate{
+    .container.downTranslate{
         -webkit-transition:3s;
         -moz-transition:3s;
         -ms-transition:3s;
         -o-transition:3s;
         transition:3s;
         margin-bottom: 50% !important;
+    }
+
+    .container.upTranslate{
+        -webkit-transition:3s;
+        -moz-transition:3s;
+        -ms-transition:3s;
+        -o-transition:3s;
+        transition:3s;
+        margin-top: 50% !important;
     }
