@@ -33,7 +33,7 @@
 
                 <div class="eight columns remove-bottom" > 
                     <div class="formContent">
-                        <form name="topic" >
+                        <form class="topicForm" name="topic" >
                             <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
                             
                         </form>
@@ -42,7 +42,9 @@
                                 <h3> next </h3>
                             </a>
                         </div>
-                        <form name="timeSlot" action="/findArticles" method="POST" onsubmit="return pace.start()">
+
+                        <form class="timeForm" name="timeSlot" action="/findArticles" method="POST">
+
                         <div id='holder'>
                             <select name="time" style="display:none">
                                 <option value="5">
