@@ -58,3 +58,7 @@
 	font-family: 'BGreg';
 	src: url('../fonts/BrandonGrotesque/regular.otf');
 }
+@font-face {
+	font-family: 'BGbig';
+	src: url('../fonts/BrandonGrotesque/block.otf');
+}

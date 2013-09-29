@@ -34,7 +34,6 @@
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block; }
 	body {
-		margin-top: 20px;
 		line-height: 1; }
 	ol, ul {
 		list-style: none; }
@@ -69,6 +68,7 @@
 	body {
 		background: #f0efe8;
 		font: 16px/24px Georgia;
+		border-top: 3px solid #ab423f;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
