@@ -183,28 +183,60 @@
 	}
 	input {
 		display: block;
-		margin: 0 ;
+		margin: 0 auto;
 		line-height: 28px;
-		font-size:28px	;
+		height: 30px;
+		font-size:26px;
+		font-family: Georgia ;
 		padding:0;
 		text-align: center;
 	}
+	#holder {
+		display:block;
+		margin: 0 auto;
+	}
+	.next .button {
+		display:block;
+		margin:0 auto;
+		width: 100px !important;
+		overflow: hidden;
+	}
+	.next > a >h3 {
+		width:300px;
+		margin:0 auto;
+		font-family:Georgia;
+		font-style: italic;
+	}
+	#holder {
+		margin-top: 30px;
+	}
+	.formContent > form > #holder > #submit {
+
+		background-color: transparent;
+		border: none;
+		text-transform: lowercase;
+		margin:0;
+	}
+	.formContent > form > #holder > select {
+		background: transparent;
+		border:none;
+		height:30px;
+		width:120px;
+		float:left;
+		margin-right:20px;
+		margin-left:33px;
+	}
+
+
 /* #Misc
 ================================================== */
 	.remove-bottom { margin-bottom: 0 !important; }
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 	.center { margin: 0 auto !important}
-	.content {
-		width: 350px;
+	.formContent {
+		margin:17px 0;
 	}
-
-    input.button{
-        position:relative;
-    /*    display:inline;*/
-        width:100px;
-        margin: 0 auto !important	;
-    }
 
 
 
