@@ -1,5 +1,4 @@
 <!doctype html>
-<! Updated as of 16th >
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -21,10 +20,6 @@
 
     </head>
     <body>
-<<<<<<< HEAD
-        <!--<div id="thing" style="height:20px; width:20px; border:thin solid black">Click</div>-->
-=======
->>>>>>> f9a42acd54af3dd7a3e394f409d0716b8f5de789
         <div class = "container">
             <div class="row">
                 <div class="eight columns">
@@ -35,7 +30,7 @@
 
                 <div class="eight columns" > 
                         <form name="timeSlot" action="/findArticles" method="POST">
-                            <select name="time">
+                            <select name="time" style="display:none">
                                 <option value="5">
                                     5 minutes
                                 </option>
@@ -48,18 +43,22 @@
                                 <option value="20">
                                     20 minutes
                                 </option>
-                                <option>
+                                <option value="25">
                                     25 minutes
                                 </option>
+                                <option value="30">
+                                    30 minutes
+                                </option>
+                                <option value="45">
+                                    45 minutes
+                                </option>
+                                <option value="60">
+                                    60 minutes
+                                </option>
                             </select>
-<<<<<<< HEAD
                             <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
                             <input type="submit" class="submit button" style="display:none"/>
-=======
-                            <!--<input type="text" name="topic" placeholder="Enter a topic" />-->
-                            <input type="submit" class="button" />
->>>>>>> f9a42acd54af3dd7a3e394f409d0716b8f5de789
-                        </form>
+                                </form>
                             <button class="next button">Next</button>
                 </div>
             </div>

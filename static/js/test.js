@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $(".next.button").click(function(){
+        alert("hello");
         var topic = $(".topic").val();
             if(topic != ""){
             $("#read").addClass('downTranslate');
