@@ -21,6 +21,10 @@ with open('static/stop.txt') as stop:
 def home():
     
 
+    return render_template('test.html')
+
+@app.route('/runTest', methods= ['GET'])
+def home():
     return render_template('debug.html')
 
 @app.route('/findArticles', methods= ['POST'])
@@ -28,17 +32,19 @@ def findArticles():
     timeWindow = request.form.get('time', type=int)
     #topic = request.form.get('topic').replace(' ', '+')
     articles = []
-    articlesTime = []
+    articlesValid = []
     i = 0
-    check = 'argument' + str(i)
+    check = 'url_' + str(i)
 
 ##Get the list of unkown size of arguments of urls to parse.
     while request.args.get(check) != None:
         articles.append(request.args.get(check))
         i = i + 1
-        check = 'argument' + str(i)
+        check = 'url_' + str(i)
 
 ## iterate through articles to analyze them.
+    totalLow = 0
+    totalHigh = 0
     for j in range(0,len(articles)):
         parser_response = parser_client.get_article_content(articles[j])
 
@@ -63,11 +69,45 @@ def findArticles():
                 if sentenceList[k][l] in stopWords:
                     stopCount = stopCount + 1
         sum =  stopCount + totalCount
+
         high = '%.2f' % (float(sum)/250)
         low = '%.2f' % (float(sum)/300)
 
+        totalHigh = totalHigh + float(sum)/250
+        totalLow = totalLow + float(sum)/300
+        print(totalLow)
 
-    return render_template('find.html', time = timeWindow, lowerBound = low, upperBound = high )
+        if totalLow - timeWindow < 1 :
+            articlesValid.append(j)
+    print(articlesValid)
+    validArticleList=[]
+    for j in range(0, len(articlesValid) ):
+        validArticleList.append(articles[articlesValid[j]])
+
+    print(validArticleList)
+
+    ##Get titles##
+    articleLinks = []
+
+    for j in range(0, len(validArticleList)):
+        articleLink = {}
+        parser_response = parser_client.get_article_content(validArticleList[j])
+        articleLink = {
+                'title' : parser_response.content['title'].replace('\n', ' '),
+                'author' : parser_response.content['author'],
+                'link' : validArticleList[j]
+        }
+        
+        articleLinks.append(articleLink)
+
+    print(articleLinks)
+
+    return render_template('find.html', 
+            time = timeWindow, 
+            lowerBound = "%.2f" %totalLow, 
+            upperBound = "%.2f"%totalHigh, 
+            finalArticlesList = articleLinks
+           ) 
     
 
 if __name__ == "__main__":

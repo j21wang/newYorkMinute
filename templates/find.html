@@ -33,7 +33,16 @@
                 </div>
             </div>
             <div class="row">
+                <div class= "center">
+                    <ul>
+                        {% for article in finalArticlesList %}
 
+                        <li>
+                            <a href="{{article.link}}" target="_blank">{{article.title}} - {{article.author}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
     </body>
 
