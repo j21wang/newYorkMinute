@@ -285,5 +285,7 @@
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
 	.center { margin: 0 auto !important}
-
+	.content {
+		width: 350px;
+	}
 

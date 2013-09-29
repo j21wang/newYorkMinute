@@ -182,7 +182,7 @@
     @media only screen and (min-width: 480px) and (max-width: 767px) {
         .container { width: 420px; }
         .container .columns,
-        .container .column { margin: 0 !important; }
+        .container .column { margin: 0; }
 
         .container .one.column,
         .container .one.columns,

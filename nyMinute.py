@@ -16,6 +16,12 @@ def home():
 def findArticles():
     timeWindow = int(request.form.get('time'))
     topic = request.form.get('topic').replace(' ', '+')
+    articles = []
+    i = 0
+    check = 'argument' + str(i)
+
+    
+    
 
     return render_template('find.html', time = timeWindow, topic = topic)
     
