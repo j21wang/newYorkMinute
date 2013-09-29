@@ -253,7 +253,7 @@
 		margin-bottom: 20px;
 		background: #fff; 
         position:relative;
-        height:30px;
+        height:18px;
     }
 	select {
 		padding: 0; }
@@ -301,7 +301,7 @@
     }
 
     @media only screen and (max-width: 767px) {
-        select{
+        select,input.topic{
             margin-left:45px;
             margin-bottom:5px;
         }
@@ -321,4 +321,13 @@
     .container{
         position:relative;
         top:100px;
+    }
+
+    .container.horizTranslate{
+        -webkit-transition:3s;
+        -moz-transition:3s;
+        -ms-transition:3s;
+        -o-transition:3s;
+        transition:3s;
+        margin-bottom: 50% !important;
     }
