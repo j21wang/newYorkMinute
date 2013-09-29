@@ -1,13 +1,11 @@
 <!doctype html>
+<! Updated as of 16th >
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-quiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title> NYminute </title>
         
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="static/js/test.js"></script>
-        <script src="static/js/getArticles.js"></script>
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content = "width=device-width,initial-scale=1">
@@ -20,10 +18,9 @@
         <meta name="viewport" content = "width=device-width,initial-scale=1">
 
 
+
     </head>
     <body>
-
-        <div id="thing" style="height:20px; width:20px; border:thin solid black">Click</div>
         <div class = "container">
             <div class="row">
                 <div class="eight columns">
@@ -32,8 +29,8 @@
                 </div>
 
                 <div class="eight columns" > 
-                        <form name="timeSlot" action="/findArticles?" method="POST">
-                            <select name="time" style="display:none" >
+                        <form name="timeSlot" action="/findArticles" method="POST">
+                            <select name="time">
                                 <option value="5">
                                     5 minutes
                                 </option>
@@ -50,8 +47,8 @@
                                     25 minutes
                                 </option>
                             </select>
-                            <input type="text" class="topic" name="topic" placeholder="Enter a topic" />
-                            <input type="submit" class="submit button" />
+                            <!--<input type="text" name="topic" placeholder="Enter a topic" />-->
+                            <input type="submit" class="button" />
                         </form>
                 </div>
             </div>

@@ -43,6 +43,10 @@ def findArticles():
 ## iterate through articles to analyze them.
     totalLow = 0
     totalHigh = 0
+    articleLow = []
+    articleHigh = []
+    articleLS = []
+    articleHS = []
     for j in range(0,len(articles)):
         parser_response = parser_client.get_article_content(articles[j])
 
@@ -68,16 +72,25 @@ def findArticles():
                     stopCount = stopCount + 1
         sum =  stopCount + totalCount
 
-        high = '%.2f' % (float(sum)/250)
-        low = '%.2f' % (float(sum)/300)
+        high = sum/250
+        low = sum/300
 
+        highSec = int(((float(sum)/250) - high)*60)
+        lowSec  = int(((float(sum)/300) - low)*60)
         totalHigh = totalHigh + float(sum)/250
         totalLow = totalLow + float(sum)/300
-        print(totalLow)
-
         if totalLow - timeWindow < 1 :
             articlesValid.append(j)
-    print(articlesValid)
+            articleLow.append(low)
+            articleHigh.append(high)
+            articleLS.append(highSec)
+            articleHS.append(lowSec)
+
+            print(articleLS)
+        else :
+            totalHigh = totalHigh - float(sum)/250
+            totalLow = totalLow - float(sum)/300
+            
     validArticleList=[]
     for j in range(0, len(articlesValid) ):
         validArticleList.append(articles[articlesValid[j]])
@@ -93,7 +106,11 @@ def findArticles():
         articleLink = {
                 'title' : parser_response.content['title'].replace('\n', ' '),
                 'author' : parser_response.content['author'],
-                'link' : validArticleList[j]
+                'link' : validArticleList[j],
+                'lowM' : articleLow[j],
+                'lowS' : articleLS[j],
+                'highS': articleHS[j],
+                'highM': articleHigh[j]
         }
         
         articleLinks.append(articleLink)

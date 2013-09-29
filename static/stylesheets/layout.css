@@ -54,3 +54,7 @@
 	font-family: 'BGitthin';
 	src: url('../fonts/BrandonGrotesque/italics_light.otf');
 }
+@font-face {
+	font-family: 'BGreg';
+	src: url('../fonts/BrandonGrotesque/regular.otf');
+}
