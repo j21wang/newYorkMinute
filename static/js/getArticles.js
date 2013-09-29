@@ -1,8 +1,16 @@
 $(document).ready(function(){
-    /*$('form').submit(function(e) {
+
+    $(document).keypress(function(e){
+        console.log(e);
+        if(e.which == 13){
+            $(".next.button").click();
+        }
+    });
+
+    $(".topicForm").submit(function(e){
         e.preventDefault();
         $(".next.button").click();
-    });*/
+    });
 
     $(".next.button").click(function(){
         var topic = $(".topic").val().replace(' ','+');
@@ -10,7 +18,7 @@ $(document).ready(function(){
         if(topic == '') {
             console.log("enters");
             topicArr = ['America','alcohol','kardashian','weight','cancer','Obama','money','joke','dead','football'];
-            randomNum = Math.floor(Math.random() *10);
+            randomNum = Math.floor(Math.random()*9);
             console.log(randomNum);
             topic = topicArr[randomNum];
             console.log(topic);
@@ -20,6 +28,10 @@ $(document).ready(function(){
            changeURL(articles);
         };
         getArticleArray(topic, callback);
+    });
+
+    $('.timeForm').submit(function(){
+        $('.submit.button').click();
     });
 });
 
